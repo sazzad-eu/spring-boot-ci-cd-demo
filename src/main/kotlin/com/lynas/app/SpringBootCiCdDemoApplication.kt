@@ -9,6 +9,8 @@ import org.springframework.boot.runApplication
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
+import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.RestController
 
 @SpringBootApplication
 class SpringBootCiCdDemoApplication
@@ -47,4 +49,11 @@ class BookService(val bookRepository: BookRepository) {
 			bookRepository.save(this)
 		}
 	}
+}
+
+@RestController
+class DemoController{
+
+	@GetMapping("/")
+	fun hello() = "Hello, World!"
 }
