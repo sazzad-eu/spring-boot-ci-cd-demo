@@ -34,3 +34,5 @@ jobs:
         name: euznsazzad/spring-boot-ci-cd-demo
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
+    - name: Deploy app to render
+      run: curl ${{ secrets.RENDER_HOOK }}
